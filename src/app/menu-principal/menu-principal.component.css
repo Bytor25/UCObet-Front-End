@@ -1,0 +1,67 @@
+.menu {
+    display: flex; 
+    padding: 50px;
+    gap: 30px;
+}
+
+.card-advertising-zone{
+    background-color: #eeeeee;
+    width: 100%;
+    max-width: 250px;
+    height: 500px;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 20px;
+}
+.card-image {
+    width: 100%; 
+    height: auto;
+    border-radius: 8px; 
+    padding: 10px;
+    opacity: 0.4;
+}
+
+.card {
+    background-color: white;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.card2 {
+    background-color: #35903d;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.card3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+
+.MenuButton-Button {
+    background-color: #525252c0;
+    text-decoration: none;
+    color: white;
+    font-family: "Ledger", sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+    transition: background-color 0.5s ease;
+    box-sizing: border-box;
+    border-style:initial;
+}
+
+.MenuButton-Button:hover {
+    background-color: #B2B2B2;
+    box-shadow: 12px 10px 10px 0 rgba(0, 0, 0, 0.80);
+    color: black;
+}

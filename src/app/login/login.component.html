@@ -1,0 +1,64 @@
+
+<section>
+    <html lang="es">
+    <head>
+
+      <title>Login principal</title>
+
+    </head>
+
+    <body>
+
+        <nav class="formulario">
+
+            <div class="card">
+
+                <h1 class="titulo-Login"> Login</h1>
+                
+                <div class="card-body">
+
+                    <form #formularioLogin="ngForm">
+
+                        <div class="mb-2">
+                            <label for="">
+                                Username: 
+                            </label>
+                            <input type="text" name="Username" class="form-control" placeholder="Enter the username" [(ngModel)]="loginCredentials.username" required #Username ="ngModel">
+                            <div class="alert alert-danger mt-2" [hidden]="Username.valid || Username.pristine">
+
+                                This field is required
+
+                            </div>
+
+                        </div>
+
+                        <div class="mb-2">
+                            <label>password: </label>
+
+                            <input [type]="showPassword ? 'text' : 'password'" id="password" name="password" class="form-control" placeholder="Ingrese su Contraseña" [(ngModel)]="loginCredentials.password" required #password ="ngModel">
+                            <div class="custom-checkbox">
+                                <input type="checkbox" id="showPassword" (change)="toggleShowPassword()" [(ngModel)]="showPassword">
+                                <label for="showPassword">Mostrar Contraseña</label>
+                              </div>
+
+                            <div class="alert alert-danger mt-2" [hidden]="password.valid || password.pristine">
+                              This field is required
+                            </div>
+                          </div>
+                          
+                        <nav class="botones-login">
+                            <button class="opciones-login" [disabled]="formularioLogin.invalid">
+                                Login
+                            </button>
+                            <button class="opciones-login" (click)="refreshPage()">
+                                Cancel
+                            </button>
+
+                        </nav>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </body>
+    </html>
+  </section>

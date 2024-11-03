@@ -1,0 +1,88 @@
+<section>
+    <html lang ="es">
+        <head>
+            <title>
+                Registro Ciudades
+            </title>
+        </head>
+
+        <body>
+            <nav class="formulario">
+                <div class="card">
+                    <div class="card-body">
+                        <form #formularioRegistroCiudad="ngForm">
+                            <div class="mb-2">
+                                <label class="form-label">
+                                    City name:
+                                </label>
+
+                                <input type="text" name="City" class="form-control" placeholder="Enter the city name" [(ngModel)]="city.name" required #City="ngModel">
+
+                                <div class="alert alert-danger mt-2" [hidden]="City.valid || City.pristine">
+
+                                    This field is required
+
+                                </div>
+
+                            </div>
+
+                            <div class="mb-2">
+                                <label class="form-label">
+                                    State name:
+                                </label>
+
+                                <input type="text" name="State" class="form-control" placeholder="Enter the state name" [(ngModel)]="city.cityState.name" required #State="ngModel">
+
+                                <div class="alert alert-danger mt-2" [hidden]="State.valid || State.pristine">
+
+                                    This field is required
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="mb-2">
+                                <label class="form-label">
+                                    Country name:
+                                </label>
+
+                                <input type="text" name="Country" class="form-control" placeholder="Enter the country name" [(ngModel)]="city.cityState.stateCountry.name" required #Country="ngModel">
+
+                                <div class="alert alert-danger mt-2" [hidden]="Country.valid || Country.pristine">
+
+                                    This field is required
+
+                                </div>
+
+
+                            </div>
+
+                            <nav class="botones-registro">
+
+                                <button class="opciones-registro" [disabled]="formularioRegistroCiudad.invalid" (click)="create()">
+
+                                    Register
+
+                                </button>
+
+                                
+                                <button class="opciones-registro" (click)="visible=!visible" [routerLink]="'/principal'" >
+                                    
+                                    Cancel
+
+                                </button>
+
+                            </nav>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </nav>
+        </body>
+</html>
+</section>
