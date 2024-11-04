@@ -9,12 +9,17 @@ import { Router } from '@angular/router';
 export class InterfazComunComponent {
 
   botonDeshabilitado: boolean = false;
+  frameSuperiorDeshabilitado: boolean = false;
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.router.events.subscribe(() => {
       this.botonDeshabilitado = this.router.url === '/login';
+    });
+
+    this.router.events.subscribe(() => {
+      this.botonDeshabilitado = this.router.url === '/inicio';
     });
   }
 

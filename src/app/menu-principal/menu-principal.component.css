@@ -65,3 +65,23 @@
     box-shadow: 12px 10px 10px 0 rgba(0, 0, 0, 0.80);
     color: black;
 }
+
+.button-logout {
+    color: white;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: green;
+    cursor: pointer;
+    border: 1px solid black;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px black, -6px -6px 12px black;
+    position: absolute;
+    top: 30px;
+    right: 40px;
+}
+  
+button:active {
+     color: #666;
+     box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
