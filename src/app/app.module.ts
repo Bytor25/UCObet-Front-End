@@ -8,7 +8,6 @@ import { RegistrarCiudadComponent } from './registrar-ciudad/registrar-ciudad.co
 import { FormsModule } from '@angular/forms';
 import { InterfazComunComponent } from './interfaz-comun/interfaz-comun.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
-import { PruebaComponent } from './prueba/prueba.component';
 import { LoginComponent } from './login/login.component';
 import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
 import { provideAuth0 } from '@auth0/auth0-angular';
@@ -28,7 +27,6 @@ const appRoutes: Routes =[
     RegistrarCiudadComponent,
     InterfazComunComponent,
     MenuPrincipalComponent,
-    PruebaComponent,
     LoginComponent
   ],
   imports: [
