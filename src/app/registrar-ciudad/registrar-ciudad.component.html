@@ -1,40 +1,67 @@
 <section>
-    <nav class="formulario">
-      <div class="card">
-        <div class="card-body">
-          <form #formularioRegistroCiudad="ngForm">
-            <div class="mb-2">
-              <label class="form-label">City name:</label>
-              <input type="text" name="City" class="form-control" placeholder="Enter the city name" [(ngModel)]="city.name">
-            </div>
-  
-            <div class="mb-2">
-              <label class="form-label">State:</label>
-              <select id="state" name="state" [(ngModel)]="city.cityState.id">
-                <option value="" disabled selected>Seleccione una opción</option>
-                <option *ngFor="let item of states" [value]="item.id">{{ item.name }}</option>
-              </select>
-            </div>
-  
-            <div class="mb-2">
-              <label class="form-label">Country:</label>
-              <select id="country" name="Country" [(ngModel)]="city.cityState.stateCountry.id" required #Country="ngModel">
-                <option value="" disabled selected>Seleccione una opción</option>
-                <option *ngFor="let item of countries" [value]="item.id">{{ item.name }}</option>
-              </select>
-  
-              <div class="alert alert-danger mt-2" [hidden]="Country.valid || Country.pristine">
-                This field is required
-              </div>
-            </div>
-  
-            <nav class="botones-registro">
-              <button class="opciones-registro" [disabled]="formularioRegistroCiudad.invalid" (click)="create()">Register</button>
-              <button class="opciones-registro" (click)="visible=!visible" [routerLink]="'/principal'">Cancel</button>
+    <html lang ="es">
+        <head>
+            <title>
+                Registro Ciudades
+            </title>
+        </head>
+
+        <body>
+            <nav class="formulario">
+                <div class="card">
+                    <div class="card-body">
+                        <form #formularioRegistroCiudad="ngForm">
+                            <div class="mb-2">
+                                <label class="form-label">
+                                    City name:
+                                </label>
+
+                                <input type="text" name="City" class="form-control" placeholder="Enter the city name" [(ngModel)]="city.name">
+
+
+                            </div>
+
+                            <div class="mb-2">
+                                <label class="form-label">
+                                    State:
+                                </label>
+
+                                <select id="state" aria-placeholder="select an option" name="state" [(ngModel)]="city.cityState.id">
+
+                                    <option value="" disabled selected>Seleccione una opción</option>
+                                    <option *ngFor="let item of states" [value]="item.id">{{ item.name }}</option>
+                                </select>
+
+
+                            </div>
+
+
+
+                            <nav class="botones-registro">
+
+                                <button class="opciones-registro" [disabled]="formularioRegistroCiudad.invalid" (click)="create()">
+
+                                    Register
+
+                                </button>
+
+                                
+                                <button class="opciones-registro" (click)="visible=!visible" [routerLink]="'/principal'" >
+                                    
+                                    Cancel
+
+                                </button>
+
+                            </nav>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
             </nav>
-          </form>
-        </div>
-      </div>
-    </nav>
-  </section>
+        </body>
+</html>
+</section>
   
