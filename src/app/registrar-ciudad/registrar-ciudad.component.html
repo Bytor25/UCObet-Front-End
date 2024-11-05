@@ -28,12 +28,16 @@
 
                             <div class="mb-2">
                                 <label class="form-label">
-                                    State name:
+                                    State:
                                 </label>
 
-                                <input type="text" name="State" class="form-control" placeholder="Enter the state name" [(ngModel)]="city.cityState.name" required #State="ngModel">
+                                <select id="state" aria-placeholder="select an option" name="state" [(ngModel)]="city.cityState.id" required #state= "ngModel">
 
-                                <div class="alert alert-danger mt-2" [hidden]="State.valid || State.pristine">
+                                    <option value="" disabled selected>Seleccione una opción</option>
+                                    <option *ngFor="let item of states" [value]="item.id">{{ item.name }}</option>
+                                </select>
+
+                                <div class="alert alert-danger mt-2" [hidden]="state.valid || state.pristine">
 
                                     This field is required
 
@@ -45,10 +49,15 @@
 
                             <div class="mb-2">
                                 <label class="form-label">
-                                    Country name:
+                                    Country:
                                 </label>
 
-                                <input type="text" name="Country" class="form-control" placeholder="Enter the country name" [(ngModel)]="city.cityState.stateCountry.name" required #Country="ngModel">
+                               
+                                <select id="country" aria-placeholder="select an option" name="Country" [(ngModel)]="city.cityState.stateCountry.id" required #Country= "ngModel">
+
+                                    <option value="" disabled selected>Seleccione una opción</option>
+                                    <option *ngFor="let item of countries" [value]="item.id">{{ item.name }}</option>
+                                </select>
 
                                 <div class="alert alert-danger mt-2" [hidden]="Country.valid || Country.pristine">
 
