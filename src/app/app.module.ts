@@ -11,6 +11,7 @@ import { MenuPrincipalComponent } from './menu-principal/menu-principal.componen
 import { LoginComponent } from './login/login.component';
 import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
 import { provideAuth0 } from '@auth0/auth0-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes =[
   {path: '', redirectTo: 'inicio', pathMatch:'full'},
@@ -33,6 +34,7 @@ const appRoutes: Routes =[
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

@@ -93,3 +93,51 @@
     color: white;
     text-decoration: none;
   }
+
+
+
+  select {
+    background-color: #f9f9f9;
+    color: #525252;
+    font-family: "Ledger", sans-serif;
+    font-size: 16px;
+    padding: 12px 10px;
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    outline: none;
+    appearance: none;
+  }
+  
+  select:hover {
+    border-color: #B2B2B2;
+  }
+  
+  select:focus {
+    border-color: #525252;
+    box-shadow: 0 0 5px rgba(82, 82, 82, 0.5);
+  }
+  
+  select option {
+    color: #525252;
+    background-color: #f9f9f9;
+  }
+  
+  select option:hover {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  select:disabled {
+    background-color: #B2B2B2;
+    color: #f0f0f0;
+    cursor: not-allowed;
+  }
+  
+  .alert-danger {
+    font-size: 14px;
+    color: #d9534f;
+  }
+  
