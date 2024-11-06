@@ -12,15 +12,9 @@ export class IniciosesionComponent implements OnInit{
 
   constructor(public auth: AuthService, private router: Router){}
   ngOnInit(): void {
-    this.auth.isAuthenticated$.subscribe(autenticado => {
-      if(autenticado){
-        this.router.navigate(['principal']);
-      }
-    })
+
   }
 
-  login(){
-    this.auth.loginWithRedirect();
-  }
+
  
 }

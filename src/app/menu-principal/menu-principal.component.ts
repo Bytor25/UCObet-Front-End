@@ -13,7 +13,5 @@ export class MenuPrincipalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logout(){
-    this.auth.logout();
-  }
+
 }
