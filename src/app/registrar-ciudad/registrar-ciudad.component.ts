@@ -16,19 +16,19 @@ export class RegistrarCiudadComponent {
   visible: boolean=false;
   city: cty = new cty();
 
+  State: state = new state();
   states: state[] = [];
   countries: country[]= [];
 
   constructor(private cityService: CityService, private stateService: StateService, private countryService: CountryService, private router: Router){}
   ngOnInit(): void {
-    this.getStatesAndCountries();
+    this.getStates();
 
   }
 
   create():void{
     this.cityService.create(this.city).subscribe(
       (resp)=>{
-        console.log(resp);
         alert(resp.mensajes[0]);
         this.router.navigate(['principal'])
       },
@@ -39,12 +39,11 @@ export class RegistrarCiudadComponent {
     );
   }
 
-  getStatesAndCountries(): void{
-
+  getStates(): void{
     this.stateService.getStates().subscribe(
       (response) =>{
         this.states = response;
-        console.log(this.states);
+        this.State = response[0];
       },
       (error) => console.error('Error fetching clientes:', error)
     );

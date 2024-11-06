@@ -16,8 +16,10 @@
                                     City name:
                                 </label>
 
-                                <input type="text" name="City" class="form-control" placeholder="Enter the city name" [(ngModel)]="city.name">
-
+                                <input type="text" name="City" class="form-control" placeholder="Enter the city name" [(ngModel)]="city.name" required  #City="ngModel">
+                                <div class="alert alert-danger mt-2" [hidden]="City.valid || City.pristine">
+                                    This field is required
+                                </div>
 
                             </div>
 
@@ -26,7 +28,7 @@
                                     State:
                                 </label>
 
-                                <select id="state" aria-placeholder="select an option" name="state" [(ngModel)]="city.cityState.id">
+                                <select id="state" aria-placeholder="select an option" name="state" [(ngModel)]="city.state" required #state="ngModel">
 
                                     <option value="" disabled selected>Seleccione una opción</option>
                                     <option *ngFor="let item of states" [value]="item.id">{{ item.name }}</option>

@@ -13,10 +13,10 @@ import { state } from "../clases/state";
 
     constructor(private http: HttpClient) { }
 
-    getStates(): Observable<any> {
-        return this.http.get<{ datos: state[] }>(this.url).pipe(
-          map(response => response.datos)
-        );
+    getStates(): Observable<state[]> {
+      return this.http.get<{ datos: state[] }>(this.url).pipe(
+        map(response => response.datos)
+      );
       }
 
       private handleError(error: HttpErrorResponse) {
