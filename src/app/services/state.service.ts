@@ -9,7 +9,7 @@ import { state } from "../clases/state";
 
   export class StateService {
 
-    private url: string = "https://localhost:8080/generales/api/v1/states";
+    private url: string = "http://localhost:8081/generales/api/v1/states";
 
     constructor(private http: HttpClient) { }
 

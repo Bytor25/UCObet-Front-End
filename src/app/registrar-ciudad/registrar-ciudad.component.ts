@@ -28,6 +28,7 @@ export class RegistrarCiudadComponent {
   create():void{
     this.cityService.create(this.city).subscribe(
       (resp)=>{
+        console.log(resp);
         alert(resp.mensajes[0]);
         this.router.navigate(['principal'])
       },
@@ -43,13 +44,7 @@ export class RegistrarCiudadComponent {
     this.stateService.getStates().subscribe(
       (response) =>{
         this.states = response;
-      },
-      (error) => console.error('Error fetching clientes:', error)
-    );
-
-    this.countryService.getCountry().subscribe(
-      (response) =>{
-        this.countries = response;
+        console.log(this.states);
       },
       (error) => console.error('Error fetching clientes:', error)
     );
