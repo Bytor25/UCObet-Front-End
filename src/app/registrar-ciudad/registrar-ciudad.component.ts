@@ -43,7 +43,7 @@ export class RegistrarCiudadComponent {
     this.stateService.getStates().subscribe(
       (response) =>{
         this.states = response;
-        this.State = response[0];
+        console.log(this.states);
       },
       (error) => console.error('Error fetching clientes:', error)
     );
