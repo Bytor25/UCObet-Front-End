@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { map, Observable, throwError } from "rxjs";
 import { state } from "../clases/state";
@@ -9,11 +9,16 @@ import { state } from "../clases/state";
 
   export class StateService {
 
-    private url: string = "http://localhost:8081/generales/api/v1/states";
+    private url: string = "https://ucobetmanagement.azure-api.net/v1/generales/api/v1/states";
+    private token: string = '52de51372cc946edabb0d1ab25a88b63';
 
     constructor(private http: HttpClient) { }
 
     getStates(): Observable<state[]> {
+
+      const headers = new HttpHeaders({
+        'Authorization': `Bearer ${this.token}` 
+      });
       return this.http.get<{ datos: state[] }>(this.url).pipe(
         map(response => response.datos)
       );

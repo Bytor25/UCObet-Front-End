@@ -7,7 +7,7 @@ import { cty } from "../clases/city";
     providedIn: 'root'
   })
   export class CityService {
-    private url: string = "http://localhost:8081/generales/api/v1/cities";
+    private url: string = "https://ucobetmanagement.azure-api.net/v1/generales/api/v1/cities";
 
     constructor(private http: HttpClient) { }
 
