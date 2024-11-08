@@ -11,7 +11,7 @@ import { MenuPrincipalComponent } from './menu-principal/menu-principal.componen
 import { LoginComponent } from './login/login.component';
 import { IniciosesionComponent } from './iniciosesion/iniciosesion.component';
 import { provideAuth0 } from '@auth0/auth0-angular';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 const appRoutes: Routes =[
   {path: '', redirectTo: 'inicio', pathMatch:'full'},
@@ -22,30 +22,24 @@ const appRoutes: Routes =[
   
 ]
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    RegistrarCiudadComponent,
-    InterfazComunComponent,
-    MenuPrincipalComponent,
-    LoginComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    RouterModule.forRoot(appRoutes)
-  ],
-  providers: [
-    provideAuth0({
-      domain: 'dev-nsr620ltrh3dp80t.us.auth0.com',
-      clientId: 'dZmNXZ7ouKioJ8xiFrh1JXqXyYeskhAH',
-      authorizationParams: {
-        redirect_uri: window.location.origin
-      }
-    }),
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        RegistrarCiudadComponent,
+        InterfazComunComponent,
+        MenuPrincipalComponent,
+        LoginComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        RouterModule.forRoot(appRoutes)], providers: [
+        provideAuth0({
+            domain: 'dev-nsr620ltrh3dp80t.us.auth0.com',
+            clientId: 'dZmNXZ7ouKioJ8xiFrh1JXqXyYeskhAH',
+            authorizationParams: {
+                redirect_uri: window.location.origin
+            }
+        }),
+        provideHttpClient(withInterceptorsFromDi()),
+    ] })
 export class AppModule { }
